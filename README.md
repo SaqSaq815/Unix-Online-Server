@@ -54,14 +54,6 @@
   
 ### Your choice of Distribution
   - Debian
-  - Ubuntu:
-    - pros:
-      - Free operating system for personal and commercial use
-      - Very user friendly, especially towards beginners
-      - Has minimal hardware and system requirements
-    - Cons:
-      - Limited functionalities 
-      - Software and hardware compatibility issues
     - Pros
       - Upgradeability
       - Security
@@ -72,6 +64,14 @@
     - Cons
       - Not always up to date, you have to manually update every time
       - Not as user friendly as ubuntu server
+  - Ubuntu:
+    - pros:
+      - Free operating system for personal and commercial use
+      - Very user friendly, especially towards beginners
+      - Has minimal hardware and system requirements
+    - Cons:
+      - Limited functionalities 
+      - Software and hardware compatibility issues
   - Fedora
   
 ### Your choice of web server
