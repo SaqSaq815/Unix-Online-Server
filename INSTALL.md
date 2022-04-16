@@ -8,6 +8,8 @@
   - [Create a new user](#create-a-new-user)
   - [Security](#security)
   - [Installing Web server & Hosting](#installing-web-server--hosting)
+    - [Nginx configuration file](#nginx-configuration-file)
+    - [Unlink the default configuration file and link the new one](#unlink-the-default-configuration-file-and-link-the-new-one)
   - [Q&A](#qa)
 - [Back to the documentation :leftwards_arrow_with_hook:](#back-to-the-documentation-leftwards_arrow_with_hook)
 ## VPS installation
@@ -88,7 +90,29 @@
   - `sudo chmod 755 -R /var/www/IP_ADDRESS` to add permission
   - `sudo chown -R hostname:www-data /var/www/IP_ADDRESS` to change the ownership of the file. This is to make sure that the directory belongs to the current user. This will allows us later on to update the content of the directory using a script.
   - Now let's create a configuration file to link nginx to the new directory
+### Nginx configuration file
+-   run this command:
+    -   `sudo nano /etc/nginx/sites-available/IP_ADDRESS`
+-   this will open GNU nano editor
+    -   type:
+    -   ```
+        server {
+            listen 80;
+            listen [::]:80;
 
+            root /var/www/IP_ADDRESS;
+            index index.html;
+        }
+        ```
+
+### Unlink the default configuration file and link the new one
+- Run this command to unlink the default file
+  - `sudo unlink /etc/nginx/sites-enabled/default`
+- Run this command to link the new file
+  - `sudo ln -s /etc/nginx/sites-available/IP_ADDRESS /etc/nginx/sites-enabled/` this will create a symbolic link 
+- To check if nginx is still working, run this command
+  - `sudo nginx -t` it should show you that the syntax is okay and test is successful.
+- We now removed the default config file and successfully created a new one.
 ## Q&A
 - If ssh is not working?
   - Log in to root or to any user that belongs to sudo group
