@@ -42,11 +42,26 @@
     - Cons:
       - UI is a bit complex
       - Too much features for small project like this
-  - OVH Cloud
+  - OVH Cloud:
+    - Pros:
+      - Price is the lowest for a paid VPS server
+      - Offers high quality network
+      - Lots of administrative tools and features
+    - Cons:
+      - OVH Cloud interface not very user friendly
+      - known for having bad customer support with their products
   - Amazon AWS
   
 ### Your choice of Distribution
   - Debian
+  - Ubuntu:
+    - pros:
+      - Free operating system for personal and commercial use
+      - Very user friendly, especially towards beginners
+      - Has minimal hardware and system requirements
+    - Cons:
+      - Limited functionalities 
+      - Software and hardware compatibility issues
     - Pros
       - Upgradeability
       - Security
@@ -57,7 +72,6 @@
     - Cons
       - Not always up to date, you have to manually update every time
       - Not as user friendly as ubuntu server
-  - Ubuntu
   - Fedora
   
 ### Your choice of web server
@@ -71,7 +85,14 @@
       - Less community support
       - Less extensive list of modules
   - Apache
-  - Lighttpd
+  - Lighttpd:
+    - Pros:
+      - Low CPU and RAM requirements
+      - Handles request asynchronously in a similar way to Nginx
+    - Cons:
+      - Limited performance due to only 1 CPU thread being useradd
+      - Suitable for small websites only (in our case it works fine)
+      - Lack many advanced features
 
 ### Your static website to deploy
   - HTML
