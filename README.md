@@ -30,7 +30,6 @@
   |gitHub setup|website creation(react app)|Script for automation|
   |Documentation|Setting up web server (nginx)|Finalize documentation
   |Installation of VPS (debian)|
-  |
 ## Requirements :key:
 - VPS
   - Digital Ocean
@@ -149,7 +148,7 @@
       - Tread-base structure
       - Consumes more RAM
       - Configuration options can lead to security weak points
-      - Creates a new process for each request, reducing efficency 
+      - Creates a new process for each request, reducing efficiency 
   - Lighttpd:
     - Pros:
       - Low CPU and RAM requirements
@@ -176,8 +175,8 @@
     // command goes here
   ```
 
-## Problems & Fixes :hammer:
-<!-- TODO: -->
+## Found a bug :bug:
+- Please let us know if you found a bug, we try our best to fixe it right away.
 
 ## Team :two_men_holding_hands:
 - Jeffrey Grospe
