@@ -10,6 +10,7 @@
   - [Installing Web server & Hosting](#installing-web-server--hosting)
     - [Nginx configuration file](#nginx-configuration-file)
     - [Unlink the default configuration file and link the new one](#unlink-the-default-configuration-file-and-link-the-new-one)
+  - [Firewall configuration](#firewall-configuration)
   - [Q&A](#qa)
 - [Back to the documentation :leftwards_arrow_with_hook:](#back-to-the-documentation-leftwards_arrow_with_hook)
 ## VPS installation
@@ -113,6 +114,10 @@
 - To check if nginx is still working, run this command
   - `sudo nginx -t` it should show you that the syntax is okay and test is successful.
 - We now removed the default config file and successfully created a new one.
+
+## Firewall configuration
+- UFW is a simple firewall that we can use to add a layer of security into our server.
+
 ## Q&A
 - If ssh is not working?
   - Log in to root or to any user that belongs to sudo group
@@ -129,8 +134,6 @@
 - Why do you i have an ugly ip address?
   - Since we don't have a domain we have no choice but to use whatever is provided by our VPS.
   - However, we can easily have our own domain name by buying another service.
-
-
 
 # Back to the documentation [:leftwards_arrow_with_hook:](README.md)
 

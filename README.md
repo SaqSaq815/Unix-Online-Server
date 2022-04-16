@@ -23,7 +23,15 @@
 ## Goal :bulb:
 - The goal of this project is to used what we learned in  Unix course and apply it in real life scenarios. This project will demonstrate our knowledge in Linux environnement, used of VPS and Web server.
 - Additionally, this will demonstrate our skills to work in a team.
-  
+
+## Time table :clock130:
+- Progress
+  | week 1 | week 2 | week 3 |
+  |--------|--------|--------|
+  |gitHub setup|website creation(react app)|Script for automation|
+  |Documentation|Setting up web server (nginx)|Finalize documentation
+  |Installation of VPS (debian)|
+  |
 ## Requirements :key:
 ### Your choice of VPS server
   - Digital ocean
@@ -39,11 +47,29 @@
   
 ### Your choice of Distribution
   - Debian
+    - Pros
+      - Upgradeability
+      - Security
+      - Stability
+      - Pre-configuration
+      - Free - open source
+      - Lastly, We are more familiar with this than the other distro
+    - Cons
+      - Not always up to date, you have to manually update every time
+      - Not as user friendly as ubuntu server
   - Ubuntu
   - Fedora
   
 ### Your choice of web server
   - Nginx
+    - Pros
+      - more lightweight (requires fewer resources)
+      - Better at handling static content
+      - Better scalability
+      - Recommended for sites running on VPS
+    - Cons
+      - Less community support
+      - Less extensive list of modules
   - Apache
   - Lighttpd
 
@@ -51,6 +77,7 @@
   - HTML
   - CSS
   - JS
+  - React App
   - etc...
 
 ### Platform
@@ -66,7 +93,7 @@
 
 ## Script :notebook:
 - Script can be written using different languages it all depends on what are you comfortable of using. In our case we created our simple script using Python.
-- ```python
+- ```
   def function()
     // command goes here
   ```
