@@ -51,6 +51,15 @@
       - OVH Cloud interface not very user friendly
       - known for having bad customer support with their products
   - Amazon AWS
+    - Pros:
+      - Industry standards
+      - Built to scale easily
+      - Built-in firewall
+      - Most popular website service
+      - A lot of other services available
+    - Cons:
+      - Hard to start
+      - Expensive for zero to no traffic
   
 ### Your choice of Distribution
   - Debian
@@ -65,7 +74,7 @@
       - Not always up to date, you have to manually update every time
       - Not as user friendly as ubuntu server
   - Ubuntu:
-    - pros:
+    - Pros:
       - Free operating system for personal and commercial use
       - Very user friendly, especially towards beginners
       - Has minimal hardware and system requirements
@@ -73,6 +82,17 @@
       - Limited functionalities 
       - Software and hardware compatibility issues
   - Fedora
+    - Pros:
+      - Fast & Reliable
+      - Multi-level Security
+      - Firewall
+      - Large community
+      - Free - open sourced
+      - Many architectures
+    - Cons:
+      - Low proprietary software
+      - Low technical support
+      - Hard to troubleshoot
   
 ### Your choice of web server
   - Nginx
@@ -85,6 +105,19 @@
       - Less community support
       - Less extensive list of modules
   - Apache
+    - Pros:
+      - Reliable
+      - Allow configuration of .htaccess files
+      - Cross-platforms (Unix/Windows)
+      - Large community
+      - Free - open source
+      - Easy to configure
+      - Frequently updated
+    - Cons:
+      - Tread-base structure
+      - Consumes more RAM
+      - Configuration options can lead to security weak points
+      - Creates a new process for each request, reducing efficency 
   - Lighttpd:
     - Pros:
       - Low CPU and RAM requirements
