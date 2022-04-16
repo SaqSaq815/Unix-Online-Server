@@ -86,7 +86,7 @@
 - To host the website we have to navigate to the nginx folder or we can create a new directory
 - `cd /var/www/` inside this folder you will find html and inside here is where we will put our HTMLs.
   <hr>
-- New directory
+- To create a new directory
   - `cd sudo mkdir /var/www/IP_ADDRESS` this creates a new directory. IP_ADDRESS is the one that the VPS provided you.
   - `sudo chmod 755 -R /var/www/IP_ADDRESS` to add permission
   - `sudo chown -R hostname:www-data /var/www/IP_ADDRESS` to change the ownership of the file. This is to make sure that the directory belongs to the current user. This will allows us later on to update the content of the directory using a script.
@@ -105,7 +105,7 @@
             index index.html;
         }
         ```
-
+    - What we are doing here is telling nginx to connect to port 80 and load the files location in `/var/www/IP_ADDRESS` and the index file will be the index.html.
 ### Unlink the default configuration file and link the new one
 - Run this command to unlink the default file
   - `sudo unlink /etc/nginx/sites-enabled/default`
@@ -116,24 +116,35 @@
 - We now removed the default config file and successfully created a new one.
 
 ## Firewall configuration
-- UFW is a simple firewall that we can use to add a layer of security into our server.
+- We can use digital ocean web UI firewall feature, it is easy to follow and well documented. However for the purpose of this project we will use UFW.
+- UFW is a simple firewall that we can use to add a layer of security into our web server.
+- **IMPORTANT:** make sure you have ufw install. `sudo apt-get install ufw`
+- Follow this [link][firewall] for more detailed guide.
+- To allow all nginx connection run this cmd `sudo ufw allow 'Nginx full` then reload the firewall `sudo ufw reload` to apply our changes.
+
 
 ## Q&A
 - If ssh is not working?
   - Log in to root or to any user that belongs to sudo group
   - try installing openssh-server using this command `sudo apt install openssh-sever.
-- Cant connect to server?
+- Cant connect to VPS?
   - Make sure you have an internet connection 
   - Make sure you have the right IP address
   - Make sure you have the correct key or password
+- My website is not loading?
+  - check the status of nginx if it is running `systemctl nginx status`.
+  - Make sure you add the right directory
+  - Make sure you named the HTML file exactly what you have inside the nginx config file.
 - As soon as you login to the server, create a another user and add to the sudo group
   - `useradd username` will add new user
   - `usermod -aG sudo username` add the user to the sudo group
   - `groups username` to verify if the user is successfully added to the sudo group.
   - `su username` to switch to the other user.
 - Why do you i have an ugly ip address?
-  - Since we don't have a domain we have no choice but to use whatever is provided by our VPS.
+  - Since we don't have our own domain name we have no choice but to use whatever is provided by our VPS.
   - However, we can easily have our own domain name by buying another service.
+- UFW is not working?
+  - Make sure you install UFW. `sudo apt-get install ufw`
 
 # Back to the documentation [:leftwards_arrow_with_hook:](README.md)
 
@@ -142,3 +153,4 @@
 <!-- LINKS -->
 [PuTTY]:https://docs.oracle.com/en/cloud/paas/event-hub-cloud/admin-guide/generate-ssh-key-pair-using-puttygen.html
 [ssh-mac]:https://docs.joyent.com/public-cloud/getting-started/ssh-keys/generating-an-ssh-key-manually/manually-generating-your-ssh-key-in-mac-os-x
+[firewall]:https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-with-ufw-on-ubuntu-20-04

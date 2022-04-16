@@ -19,7 +19,6 @@
 ## Description & Scenarios :newspaper:
 - In this project we are going to fully setup a remote GNU/Linux server, host our website and deploy it online.
 
-
 ## Goal :bulb:
 - The goal of this project is to used what we learned in  Unix course and apply it in real life scenarios. This project will demonstrate our knowledge in Linux environnement, used of VPS and Web server.
 - Additionally, this will demonstrate our skills to work in a team.
@@ -33,6 +32,39 @@
   |Installation of VPS (debian)|
   |
 ## Requirements :key:
+- VPS
+  - Digital Ocean
+  - OVH cloud
+  - Amazon AWS
+  - etc...
+- Web server
+  - Nginx
+  - Apache
+  - Lighttpd
+- Web app
+  - React
+  - Node
+  - HTML, CSS, JS, etc...
+- For windows
+  - Git installed
+  - Git bash
+- VM(optional)
+  - VirtualVBox
+  - VMware
+  - etc...
+
+### Platform
+  -   Virtual Machine
+      -   These are optional:
+          -   oracleVirtual Box
+          -   VMware
+  - Linux machine & Mac
+    - Fastest and Easiest way
+    - Terminal
+  - Windows
+    - CMD
+    - PuTTy (SSH key)
+    - Git Bash (Bash Script)
 ### Your choice of VPS server
   - Digital ocean
     - Pros:
@@ -101,19 +133,11 @@
   - React App
   - etc...
 
-### Platform
-  -   Virtual Machine
-      -   oracleVirtual Box
-      -   VMware
-  - Linux machine
-  - Windows
-    - Use Git Bash
-
 ## Installation & Set ups :heavy_exclamation_mark:
 - Click this [link](INSTALL.md) for the complete installation guide.
 
 ## Script :notebook:
-- Script can be written using different languages it all depends on what are you comfortable of using. In our case we created our simple script using Python.
+- Script can be written using different languages it all depends on what are you comfortable of using. In our case we created our simple script using **bash**.
 - ```
   def function()
     // command goes here
