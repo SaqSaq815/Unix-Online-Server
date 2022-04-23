@@ -17,10 +17,10 @@
 - [Teacher :cop:](#teacher-cop)
 
 ## Description & Scenarios :newspaper:
-- In this project we are going to fully setup a remote GNU/Linux server, host our React website and deploy it online.
+- In this project we are going to fully setup a remote GNU/Linux server, host our website and deploy it online.
 
 ## Goal :bulb:
-- The goal of this project is to used what we learned in  Unix course and apply it in real life scenarios. This project will demonstrate our knowledge in Linux environnement, used of VPS and Web server.
+- The goal of this project is to used what we learned in Unix course and apply it in real life scenarios. This project will demonstrate our knowledge in Linux environnement, used of VPS and Web server.
 - Additionally, this will demonstrate our skills to work in a team.
 
 ## Time table :clock130:
