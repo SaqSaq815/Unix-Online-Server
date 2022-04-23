@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style/style.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <title>Assignment 1 - Graphics Processing Units</title>
+</head>
+<body>
+    <div id = "container">
+        <header>
+            <nav>
+                <ul>
+                    <li><a href = "home.html">Home</a></li>
+                    <li><a href = "gallery.html">Gallery</a></li>
+                    <li><a href = "lists.html">Lists</a></li>
+                    <li><a href = "tables.html">Tables</a></li>
+                    <li><a id = "currentPage" href = "form.html">Form</a></li>
+                    <li><a href = "topic.html">TopicTest</a></li>
+                    <li><a href = "contact.html">Contact</a></li>
+                    <li><a href = "https://www.nvidia.com/en-us/geforce/graphics-cards/30-series/" target="_blank">Nvidia</a>
+                </nav>
+            </nav>
+        </header>
+        <main>
+            <div class="fillInfo">
+                Fill in information about the new student
+            </div>
+            <div class="form">
+                <form >                
+                    <fieldset class="idFieldset1">  
+                        <br>
+                        <h3>Student's info</h3>
+                        <label>Student ID</label>
+                        <input class="StuIdInput" type="number" placeholder="Enter you student ID (only numbers)" required>
+                        <label>First Name</label>
+                        <input class="fNameInput" type="text" placeholder="First Name" required>
+                        <label>Last Name</label>
+                        <input class="lNameInput" type="text" placeholder="Last Name" required>
+                        <div class="usernamePasswordDivlabel">
+                            <label class="usernameLabel">Username</label> <label class="passwordLabel">Password</label>    
+                        </div>
+                        <div class="usernamePasswordDivInput">
+                            <input class="userNameInput" type="text" placeholder="Username" required>
+                            <input class="passwordInput" type="password" placeholder="Password" required>
+                        </div>
+                        <div class="dobCourseDiv">
+                            <label class="dob">Date of birth</label>
+                            <input class="dobInput" type="date" placeholder="yyyy-mm-dd" required>
+                            <label>Courses</label>
+                            <select name="courses"> 
+                                <option >--</option> 
+                                <option >Programming Patters</option> 
+                                <option >Unix</option> 
+                                <option >Internet Programming</option> 
+                                <option >App Development</option> 
+                            </select>
+                        </div>
+                        <div class="campusDiv" >
+                            <label class="campusLabel">Select campus: </label required>
+                            <input class="laval" name="campus" type="radio"> <label >Laval</label>
+                            <input class="montreal" name="campus" type="radio"> <label>Montreal</label>
+                            <input class="Longueuil" name="campus" type="radio"> <label>longueuil</label>
+                        </div>
+                        <div class="schedulePrefDiv">
+                            <label class="schedulePrefLabel">Select schedule preference: </label>
+                            <input class="" name="schedule" type="checkbox"> <label >Morning classes</label>
+                            <input class="" name="schedule" type="checkbox"> <label>Evening classes</label>
+                            <input class="" name="schedule" type="checkbox"> <label>Back-to-back classes</label>
+                            <input class="" name="schedule" type="checkbox"> <label>No preference</label>
+                        </div>
+                    </fieldset>
+                    <fieldset class="fieldset2">
+                        <h3>Contact</h3>
+                        <hr color="lightgrey">
+                        <div class="contactInfoLabel">
+                            <label class="emailLabel">Email</label>
+                            <label class="phoneLabel">Phone #</label>
+                            <label class="favColourLabel">Favorite colour</label>
+                        </div>
+                        <div class="contactInfoInput">
+                            <input class="emailInput" type="email" placeholder="RandomEmail@example.com" required>
+                            <input class="phoneInput" type="tel" placeholder="514-555-5555" required>
+                            <input class="favColourInput" type="color">
+                        </div>
+                    </fieldset>
+                    <fieldset class="fieldset3">
+                        <h3>Address</h3>
+                        <hr color="lightgrey">
+                        <label class="streetLabel">Street</label>
+                        <input class="streetInput" type="text" placeholder="Street name" required>
+                        <label class="cityLabel">City</label>
+                        <input class="cityInput" type="text" placeholder="City" required>
+                        <div class="locationLabel">
+                            <label class="provinceLabel">Province</label>
+                            <label class="postalCodeLabel">Postal Code</label>
+                        </div>
+                        <div class="locationInput">
+                            <input class="provinceInput" type="text" placeholder="Province" required>
+                            <input class="postalCodeInput" type="text" placeholder="A1A 1A1" required>
+                        </div>
+                        <label class="commentLabel">Comments</label>
+                        <input class="commentInput" type="text" placeholder="Any comments?">
+                    </fieldset>
+                    <input class="resetBtn" type="reset">
+                    <input class="submitBtn" type="submit">
+                </form>
+            </div>
+        </main>
+        <footer>
+            &rarr; Md Saqliyan Islam &larr; &copy; Febuary 7th 2022 <sub> Copyrights all rights reserved</sub>
+        </footer>
+    </div>
+</body>
+</html>

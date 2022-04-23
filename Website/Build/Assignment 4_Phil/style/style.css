@@ -1,0 +1,457 @@
+html {
+    background-color: rgb(56, 149, 255);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+nav {
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: white;
+}
+
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+nav ul>li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    border: 2px solid black;
+    border-radius: 5px;
+    margin: auto;
+    background-color: white;
+}
+
+nav li:hover {
+    background-color: black;
+    font-style: bold;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+nav ul>li:hover a {
+    color: white;
+}
+
+nav li>a:link {
+    color: rgb(56, 149, 255);
+    text-decoration: none;
+    letter-spacing: 2px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+nav li>a:visited {
+    text-decoration: none;
+    color: red;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+nav li>a:active {
+    color: blueviolet;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#currentTab {
+    color: white;
+}
+
+#main {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: stretch;
+    flex-wrap: wrap;
+    margin-left: 225px;
+    margin-right: 225px;
+}
+
+figure {
+    border: .2em black solid;
+    display: flex;
+    flex-flow: column;
+    padding: 10px 5px;
+    max-width: 250px;
+    border-radius: 20px;
+    background-color: white;
+}
+
+img {
+    max-width: 250px;
+    max-height: 250px;
+}
+
+figcaption {
+    background-color: #222;
+    color: #fff;
+    font: italic smaller sans-serif;
+    padding: 10px;
+    text-align: center;
+}
+
+#currentPage {
+    background-color: black;
+    color: white;
+}
+
+#footer {
+    border: .2em black solid;
+    padding: 10px 10px;
+    margin: 2px;
+    border-radius: 5px;
+    background-color: white;
+}
+
+#mainPage {
+    background-color: white;
+    padding: 20px 20px;
+    border: 0.2em black solid;
+    border-radius: 20px;
+}
+
+/*Lists ordered list */
+ol {
+    border: 5px solid black;
+    list-style-type: upper-roman;
+    background-color: white;
+}
+
+ol>li {
+    border: 2px dotted black;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+ol>li:hover {
+    background-color: rgb(240, 35, 247);
+}
+
+/*Lists unordered list*/
+#mainLists ul {
+    border: 5px dotted black;
+    background-color: white;
+}
+
+#mainLists ul>li {
+    border-style: double;
+    font-size: large;
+    padding: 20px;
+    line-height: 10px;
+}
+
+#mainLists ul>li:hover {
+    background-image: url(https://wallup.net/wp-content/uploads/2016/01/164682-simple-colorful-abstract-gradient-lightning-Easter-sky.jpg);
+    background-repeat: no-repeat;
+    background-size: 1700px;
+}
+
+#mainLists {
+    margin-left: 100px;
+    margin-right: 100px;
+    padding: 10px;
+}
+
+/*Table*/
+table,
+th,
+td {
+    border: 2px solid black;
+    border-collapse: collapse;
+    padding: 10px;
+    margin-bottom: 100px;
+}
+
+thead {
+    background-color: black;
+    color: white;
+    font-size: larger;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+tbody {
+    background-color: white;
+    text-align: center;
+}
+
+tfoot {
+    background-color: rgb(10, 220, 235);
+    font-family: 'Times New Roman', Times, serif;
+    font-size: large;
+    text-align: center;
+    letter-spacing: 0.5px;
+    font-style: oblique;
+    text-shadow: 2px;
+}
+
+tbody tr:hover {
+    background-color: rgb(209, 209, 209);
+}
+
+tr:nth-child(even) {
+    background-color: rgb(228, 227, 227);
+}
+
+
+/*Topic Page*/
+#mainTopicPage {
+    background-color: white;
+    padding: 20px 20px;
+    border: 0.2em black solid;
+    border-radius: 20px;
+}
+
+#mainTopicPage>h1 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+#mainTopicPage>h1 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#mainTopicPage>h1 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#mainTopicPage h1,
+#mainTopicPage h2,
+#mainTopicPage h3 {
+    text-align: center;
+    font-style: italic;
+    text-shadow: 2px 2px 2px rgb(53, 53, 53);
+}
+
+#topicHeader {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#topicBody1 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#topicBody2 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#mainTopicPage p {
+    line-height: 1.5;
+}
+
+#topicHeader>p:first-line {
+    text-transform: capitalize;
+}
+
+#topicBody1>p:nth-child(n+1)::first-letter {
+    text-transform: capitalize;
+    font-size: 2rem;
+}
+
+::selection {
+    color: black;
+    background: yellow;
+}
+
+::-moz-selection {
+    color: black;
+    background: yellow;
+}
+
+
+/*Form Page*/
+.mainForm {
+    background-color: white;
+    padding: 20px 20px;
+    border: 0.2em black solid;
+    border-radius: 20px;
+}
+
+.warning {
+    background-color: rgb(32, 136, 255);
+    color: white;
+    padding: 5px 5px;
+    margin-bottom: 2rem;
+}
+
+fieldset {
+    border-style: none;
+}
+
+/* Student*/
+.stuForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Student Login */
+.user {
+    position: relative;
+}
+
+.username,
+.addressProvince,
+.DOB {
+    width: 50%;
+    float: left;
+}
+
+.username input {
+    width: 100%;
+}
+
+.password {
+    float: right;
+    width: 45%;
+}
+
+.password input,
+.DOB input {
+    width: 100%;
+}
+
+.courses {
+    float: right;
+    width: 45%;
+    margin-top: 20px;
+}
+
+select {
+    height: 20px;
+    /*Due to "Mutiple" the slection is no longer a page*/
+}
+
+/* Campus */
+.campusRadioBTN {
+    clear: both;
+    margin-bottom: 20px;
+}
+
+.campusRadioBTN p,
+.scheduleCheckbox p {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.campusRadioBTN input,
+.scheduleCheckbox input {
+    margin-right: 5px;
+}
+
+.campusRadioBTN label {
+    margin-right: 10rem;
+}
+
+.scheduleCheckbox label {
+    margin-right: 5rem;
+}
+
+/* Contact */
+.scheduleCheckbox,
+.contact {
+    margin-bottom: 30px;
+}
+
+.contact,
+.address,
+hr {
+    margin-bottom: 20px;
+}
+
+.contact {
+    display: flex;
+    justify-content: stretch;
+}
+
+.contact div {
+    margin-right: 30px;
+}
+
+.email input,
+.phone input {
+    width: 15rem;
+}
+
+.color {
+    width: 100%;
+}
+
+.color input {
+    margin-top: 5px;
+    padding: 2px;
+    height: 20px;
+    width: 100%;
+}
+
+/* address section */
+.addressPostal {
+    margin-bottom: 30px;
+}
+
+.addressPostal #postal {
+    width: 49.5%;
+}
+
+.addressProvince #province {
+    width: 95%;
+}
+
+input#street,
+input#city {
+    width: 100%;
+}
+
+/* Comment */
+textarea {
+    margin: 10px 0 10px 0;
+    width: 100%;
+    padding: 10px;
+}
+
+/* Buttons */
+.buttons button,
+.buttons input {
+    color: white;
+    width: 60px;
+    height: 30px;
+    border-style: none;
+    border-radius: 5px;
+}
+
+.buttons button {
+    background-color: rgb(247, 25, 25);
+}
+
+.buttons button:hover {
+    background-color: rgb(247, 75, 75);
+}
+
+.buttons input {
+    background-color: rgb(9, 117, 160);
+}
+
+.buttons input:hover {
+    background-color: rgb(9, 167, 210);
+}
+
+.buttons {
+    margin-bottom: 20px;
+}
+
+input#stuID,
+input#firstName,
+input#lastName {
+    width: 100%;
+}
+
+input#lastName {
+    margin-bottom: 10px;
+}
+
+input[type=text],
+input[type=password],
+input[type=email],
+input[type=tel] {
+    padding: 5px 0;
+    margin: 5px 0;
+}

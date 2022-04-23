@@ -17,7 +17,7 @@
 - [Teacher :cop:](#teacher-cop)
 
 ## Description & Scenarios :newspaper:
-- In this project we are going to fully setup a remote GNU/Linux server, host our website and deploy it online.
+- In this project we are going to fully setup a remote GNU/Linux server, host our React website and deploy it online.
 
 ## Goal :bulb:
 - The goal of this project is to used what we learned in  Unix course and apply it in real life scenarios. This project will demonstrate our knowledge in Linux environnement, used of VPS and Web server.
@@ -27,9 +27,10 @@
 - Progress
   | week 1 | week 2 | week 3 |
   |--------|--------|--------|
-  |gitHub setup|website creation(react app)|Script for automation|
+  |gitHub setup|website creation|Script for auto deployment|
   |Documentation|Setting up web server (nginx)|Finalize documentation
   |Installation of VPS (debian)|
+  |Connecting to the VPS|
 ## Requirements :key:
 - VPS
   - Digital Ocean
@@ -40,9 +41,16 @@
   - Nginx
   - Apache
   - Lighttpd
+- Domain name (optional)
+  - `Name.com`
+  - `GoDaddy.com`
+  - etc
+- SSL
+  - In your vps or domain name provider
+  - Let's Encrypt 
 - Web app
   - React
-  - Node
+  - Node.js
   - HTML, CSS, JS, etc...
 - For windows
   - Git installed
@@ -158,11 +166,13 @@
       - Suitable for small websites only (in our case it works fine)
       - Lack many advanced features
 
-### Your static website to deploy
+### Your website to deploy
   - HTML
   - CSS
   - JS
   - React App
+  - Django
+  - Flask
   - etc...
 
 ## Installation & Set ups :heavy_exclamation_mark:
@@ -170,13 +180,29 @@
 
 ## Script :notebook:
 - Script can be written using different languages it all depends on what are you comfortable of using. In our case we created our simple script using **bash**.
-- ```
-  def function()
-    // command goes here
+- ```bash
+  #!/bin/bash
+  echo "Running a bash script..."
+  if [-d "Build" ]
+  then
+    echo "Build found!"
+    sleep 2
+    echo "Deleting old files..."
+    ssh hostname@IP_ADDRESS "rm -rfv /var/www/IP_ADDRESS/"
+    echo "Importing build to the server..."
+    scp -r build/* hostname@IP_ADDRESS:/var/www/IP_ADDRESS
+    echo "successfully deployed your website to the server"
+  else
+    echo "Build folder doest not exist!"
+    echo "Deployed failure"
+  fi
+    echo "Finish executing script"
   ```
 
+## Live Website
+- Visit our site at www.le3pokpok.codes
 ## Found a bug :bug:
-- Please let us know if you found a bug, we try our best to fixe it right away.
+- Please let us know if you found any bug, we will try our best to fix it right away.
 
 ## Team :two_men_holding_hands:
 - Jeffrey Grospe

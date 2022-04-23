@@ -1,0 +1,413 @@
+
+/* header spacing */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    height: 100;
+    width: 100; 
+}
+header>nav>ul{
+    display: flex;
+    flex-wrap: wrap;
+}
+header>nav>ul > li {
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid black;
+    border-radius: 50px; 
+}
+
+
+/* header colors */
+header>nav>ul > li:hover {
+    background-color: rgb(217, 220, 73);
+}
+header>nav>ul > li > a:link, a:visited { 
+    color: rgba(176, 3, 156, 0.878);
+    text-decoration: none;
+    padding: 1rem 1rem;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    letter-spacing: 1.5px;
+}
+header>nav>ul > li > a:hover {
+    color: rgb(47, 225, 31);
+    font-style: bold;
+}
+header>nav>ul > li > a:active{
+    color:rgb(46, 16, 237);  
+}
+#currentPage{
+    background-color: rgb(22, 200, 220);
+    border: 2px solid black;
+    border-radius: 50px;
+}
+nav {
+    margin: 20px 30px;
+    padding: 10px 10px;
+    border: 10px solid rgb(167, 23, 23);
+}
+
+body {
+    background-color: rgb(136, 108, 118);
+    margin: auto;
+    padding: 10px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+/* gallery pics */
+main /*> article */{
+    border: 2px solid black;
+    display: flex;
+    padding: 20px;
+    justify-content: space-evenly;
+    align-items: stretch;
+    flex-wrap: wrap;
+    color: rgb(8, 33, 23);
+    background-color: rgb(224, 54, 54); 
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+main>ol {
+    border: 2px solid black;
+    padding: 35px;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    background-color: rgb(148, 40, 32);
+    margin-top: 10px;
+    margin-bottom: 10px;
+    list-style: upper-roman;
+}
+main>ol>li>a:hover{
+    background-color: rgb(217, 220, 73);
+}
+main>ol>li{
+    padding: 3px;
+}
+main>ul {
+    border: 2px dotted black;
+    padding: 30px;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    background-color: rgb(148, 40, 32);
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+main>ul>li{
+    border: double;
+    padding: 20px;
+    line-height:1px;
+}
+main>ul>li:hover{
+    border: double;
+    padding: 20px;
+    line-height:1px;
+    /*background-color: rgb(217, 220, 73);*/
+    background: url(../images/GPU.jpg) no-repeat center;
+    color:white;
+}
+
+main > figure {
+    border: 1px  black;
+    margin-bottom: 1.5rem;
+    border-radius: 15px;
+    background-color: rgb(160, 63, 63);
+}
+
+main > figure > img {
+    padding: 25px 20px;
+    border-top-left-radius: 35px;
+    border-top-right-radius: 35px;
+}
+
+figcaption{
+    position: relative;
+    top:-10px;
+    text-align: center;
+    padding: 10px 10px;
+    border: 1px solid rgb(0, 0, 0);
+    color: white;
+    background-color: rgb(111, 9, 9);
+}
+/**/
+footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(107, 55, 55);
+    color: white;
+    text-align: center;
+}
+
+/*tables*/
+main.tablePage {
+    margin: 0 30px;
+}
+table { 
+    margin: auto;
+    padding: auto;
+    border-collapse: collapse;
+    max-width:60rem;
+    empty-cells: hide;
+    box-shadow: -0.1rem -0.1rem 0.3rem rgb(2, 225, 255), 0.1rem 0.1rem 0.3rem rgb(0, 255, 55);
+}
+thead {
+    background-color: rgb(168, 15, 15);
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color:white;
+}
+tbody {
+    background-color: rgb(212, 103, 103);
+}
+tfoot {
+    background-color: rgb(201, 75, 138);
+}
+th,td {
+    border: 1px solid rgb(0, 0, 0);
+    padding: 5px 20px;
+    cursor: default;
+}
+thead th:hover {
+    box-shadow: inset -0.1rem -0.1rem 0.3rem black, inset 0.1rem 0.1rem 0.3rem #f5faff;
+    background-color: rgb(226, 81, 24);
+    text-shadow: 0 0 2px rgb(0, 0, 0);
+}
+tbody th:hover, td:hover {
+    box-shadow: inset -0.1rem -0.1rem 0.3rem #a05050,
+                inset 0.1rem 0.1rem 0.3rem #eb8989;
+    text-shadow: 0 0 5px white;
+    background-color: rgb(244, 134, 134)
+}
+tfoot td:hover{
+    box-shadow: inset -0.1rem -0.1rem 0.3rem #a49b6d,
+    inset 0.1rem 0.1rem 0.3rem #000000;
+    background-color: rgb(209, 191, 205)
+}
+tbody > tr:nth-child(odd){
+    background-color: #c24f4f;
+}
+
+
+/*Topic.html*/
+::selection {
+    background: yellow;
+}
+#Topic{
+    
+    font-style: italic;
+}
+#Topic>ul>p::first-letter{
+    text-transform: capitalize;
+    font-size: 20px;
+}
+#Topic>ul>p{
+    text-transform: capitalize;
+}
+
+#Topic>ul>h1{
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    text-shadow: 2px 2px rgb(194, 174, 174);
+}
+#Topic>ul>h2{
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    text-shadow: 2px 2px rgb(194, 174, 174);
+}
+#Topic>ul>h3{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    text-shadow: 2px 2px rgb(194, 174, 174);
+}
+
+
+/*Form.html*/
+.fillInfo{
+    margin: 50px auto 0 auto;
+    padding: 15px 0 15px 20px;
+    display: flex;
+    width: 80%;
+    background-color: rgb(0,123,255);
+    color: white;
+    font-size: 13px;
+}
+
+.form{
+    justify-content: center;
+    width: 50%;
+    margin: 0 auto 50px auto;
+}
+
+fieldset{
+    padding: 0;
+    border: none;
+}
+
+input{
+    padding: 5px;
+    margin: 5px 0;
+}
+
+label{
+    font-size: 14px;
+}
+
+.StuIdInput{
+    width: 100%;
+}
+.fNameInput{
+    width: 100%;
+}
+.lNameInput{
+    width: 100%;
+}
+
+.usernamePasswordDivLabel{
+    display: flex;
+    justify-content: space-between;    
+}
+.usernamePasswordDivInput{
+    display: flex;
+    justify-content: space-between;
+}
+
+.usernameLabel{
+    width: 48%;
+}
+.passwordLabel{
+    width: 48%;
+}
+
+.userNameInput{
+    width: 48%;
+}
+.passwordInput{
+    width: 48%;
+}
+
+.dob{
+    display: flex;
+    width: 100%;
+}
+.dobInput{
+    width: 48%;
+    margin-right: 4%;
+}
+
+
+.dobCourseDiv select{
+    width: 15%;
+    padding: 5px;
+}
+
+
+.campusLabel{
+    display: flex;
+    font-weight: bold;
+}
+
+.campusDiv label{
+    margin-right: 15%;
+}
+
+.schedulePrefLabel{
+    margin-top: 20px;
+    display: flex;
+    width: 100%;
+    font-weight: bold;
+}
+.schedulePrefDiv label{
+    margin-right: 5%;
+}
+
+
+.fieldset2{
+    margin-top: 20px;
+}
+
+
+.emailLabel{width: 30%;}
+.phoneLabel{width: 30%;}
+.favColourLabel{width: 30%;}
+.contactInfoLabel{
+    display: flex;
+    justify-content: space-between;
+}
+
+.emailInput{width: 30%;}
+.phoneInput{width: 30%;}
+.favColourInput{width: 30%; height: 20px;}
+
+.contactInfoInput{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.streetLabel{
+    display: flex;
+    width: 100%;
+}
+.streetInput{
+    width: 100%;
+}
+
+.cityLabel{
+    display: flex;
+    width: 100%;
+}
+.cityInput{
+    width: 100%;
+}
+
+.locationLabel{
+    display: flex;
+    justify-content: space-between;
+}
+.provinceLabel{
+    width: 48%;
+}
+.postalCodeLabel{
+    width: 48%;
+}
+
+.locationInput{
+    display: flex;
+    justify-content: space-between;
+}
+.provinceInput{
+    width: 48%;
+}
+.postalCodeInput{
+    width: 48%;
+}
+
+.commentLabel{
+    display: flex;
+    width: 100%;
+}
+.commentInput{
+    width: 100%;
+    height: 100px;
+}
+
+.resetBtn{
+    background-color: rgb(0,123,255);
+    border: none;
+    color: white;
+    padding: 7px;
+    font-size: 12px;
+    border-radius: 2px;
+}
+.submitBtn{
+    background-color: rgb(216, 105, 116);
+    border: none;
+    color: white;
+    padding: 7px;
+    font-size: 12px;
+    border-radius: 2px;
+}

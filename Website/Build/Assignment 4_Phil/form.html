@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Assignment 1 - Ecommerce Website</title>
+    <link rel="stylesheet" type="text/css" href="style/style.css">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <script src="https://kit.fontawesome.com/4b3b1a4740.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div id="container">
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="Home.html">Home</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="lists.html">Lists</a></li>
+                    <li><a href="tables.html">Tables</a></li>
+                    <li><a href="topic.html">Topic</a></li>
+                    <li id="currentPage"><a id="currentTab" href="form.html">Form</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="https://youtu.be/dQw4w9WgXcQ" target="_blank">Feeling Lucky</a></li>
+                </ul>
+            </nav>
+        </header>
+        <h1>
+            <center>&#9834; Toilet Tunes &#9834;</center>
+        </h1>
+        <br>
+        <div class="mainForm">
+            <div class="warning">
+                <p>
+                    Fill in the information about the new student
+                </p>
+            </div>
+            <div class="stuForm">
+                <form action="" method="get">
+                    <fieldset>
+                        <h3><i class="fas fa-info-circle fa-sm "></i>Student's Info</h3>
+                        <label for="stuID">Student ID</label><br>
+                        <input id="stuID" name="student" type="text" name="stuID"placeholder="Enter your student ID (only digit)" required /><br>
+                        <label for="firstName">Firstname</label><br>
+                        <input type="text" name="student" id="firstName" placeholder="Firstname" required><br>
+                        <label for="lastName">Lastname</label><br>
+                        <input type="text" name="student" id="lastName" placeholder="Lastname" required><br>
+                        <div class="user">
+                            <div class="username">
+                                <label for="username">Username</label>
+                                <input type="text" name="username" id="username" placeholder="Username" required>
+                            </div>
+                            <div class="password">
+                                <label for="password">Password</label>
+                                <input type="password" name="password" id="password" placeholder="Password" required>
+                            </div>
+                            <div class="DOB">
+                                <label for="DOB">Date of birth</label>
+                                <input type="text" name="DOB" id="DOB" placeholder="yyyy-mm-dd">
+                            </div>
+                            <div class="courses">
+                                <label for="courses">Courses</label>
+                                <select name="courses" id="courses" multiple>
+                                    <!--Due to "Mutiple" the slection is no longer a page-->
+                                    <option value="--" selected>--</option>
+                                    <option value="Computer Science">Computer Science</option>
+                                    <option value="e-Commerce">e-Commerce</option>
+                                    <option value="Social Science">Social Science</option>
+                                    <option value="Health Science">Health Science</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="campusRadioBTN">
+                            <p>Select campus</p>
+                            <input type="radio" name="campus" id="laval" value="laval">
+                            <label for="laval">Laval</label>
+                            <input type="radio" name="campus" id="montreal" value="montreal">
+                            <label for="montreal">Montreal</label>
+                            <input type="radio" name="campus" id="longueuil">
+                            <label for="longueuil">Longueuil</label>
+                        </div>
+                        <div class="scheduleCheckbox">
+                            <p>Select schedule preference:</p>
+                            <input type="checkbox" name="schedule" id="morning"><label for="morning">Morning classes</label>
+                            <input type="checkbox" name="schedule" id="evening"><label for="evening">Evening classes</label>
+                            <input type="checkbox" name="schedule" id="bob"><label for="bob">Back-to-back classes</label>
+                            <input type="checkbox" name="schedule" id="na"><label for="na">No preference</label>
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <h3><i class="fas fa-phone-alt fa-xs"></i> Contact</h3>
+                        <hr>
+                        <div class="contact">
+                            <div class="email">
+                                <label for="email">Email</label><br>
+                                <input type="email" name="contact" id="email" placeholder="john@example.com">
+                            </div>
+                            <div class="phone">
+                                <label for="phone">Phone #</label><br>
+                                <input type="tel" name="contact" id="phone" placeholder="(514) 999-9999">
+                            </div>
+                            <div class="color">
+                                <label for="color">Favorite color</label><br>
+                                <input type="color" name="contact" id="color">
+                            </div>
+                        </div>
+                    </fieldset>
+                    <fieldset class="address">
+                        <h3><i class="fas fa-address-card fa-sm"></i> Address</h3>
+                        <hr>
+                        <label for="street">Street</label><br>
+                        <input type="text" name="address" id="street" placeholder="Street name"><br>
+                        <label for="city">City</label><br>
+                        <input type="text" name="address" id="city" placeholder="City"><br>
+                        <div class="addressProvince">
+                            <label for="province">Province</label><br>
+                            <input type="text" name="address" id="province" placeholder="Province"><br>
+                        </div>
+                        <div class="addressPostal">
+                            <label for="postal">Postal Code</label><br>
+                            <input type="text" name="address" id="postal" placeholder="A1A 1A1">
+                        </div>
+                        <div class="comments">
+                            <label for="comments">Comments:</label><br>
+                            <textarea name="comments" id="comments" cols="30" rows="10">Any comments?</textarea>
+                        </div>
+                        <div class="buttons">
+                            <button>Reset</button>
+                            <input type="submit" value="Submit">
+                        </div>
+                    </fieldset>
+                    <hr>
+                    <div class="formFooter">
+                        <p>&copy; Internet | student</p>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <footer id="footer">
+            &#169;&nbsp; Philip Rieck February 3 2022. All Rights Reserved.&#174; &#9993; &#9990; 514-420-6969
+        </footer>
+    </div>
+</body>
+
+</html>
