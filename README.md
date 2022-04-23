@@ -180,24 +180,7 @@
 
 ## Script :notebook:
 - Script can be written using different languages it all depends on what are you comfortable of using. In our case we created our simple script using **bash**.
-- ```bash
-  #!/bin/bash
-  echo "Running a bash script..."
-  if [-d "Build" ]
-  then
-    echo "Build found!"
-    sleep 2
-    echo "Deleting old files..."
-    ssh hostname@IP_ADDRESS "rm -rfv /var/www/IP_ADDRESS/"
-    echo "Importing build to the server..."
-    scp -r build/* hostname@IP_ADDRESS:/var/www/IP_ADDRESS
-    echo "successfully deployed your website to the server"
-  else
-    echo "Build folder doest not exist!"
-    echo "Deployed failure"
-  fi
-    echo "Finish executing script"
-  ```
+- Click the magnifying glass for the script [:mag:](/INSTALL.md#bash-script) 
 
 ## Live Website
 - Visit our site at www.le3pokpok.codes
