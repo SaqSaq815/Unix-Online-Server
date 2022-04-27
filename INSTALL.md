@@ -8,7 +8,7 @@
   - [Create a new user](#create-a-new-user)
   - [Security](#security)
   - [Installing Web server & Hosting](#installing-web-server--hosting)
-    - [Nginx configuration file](#nginx-configuration-file)
+    - [Apache2 configuration file](#apache2-configuration-file)
     - [Unlink the default configuration file and link the new one](#unlink-the-default-configuration-file-and-link-the-new-one)
   - [Firewall configuration](#firewall-configuration)
   - [Q&A](#qa)
@@ -80,39 +80,40 @@
 
 ## Installing Web server & Hosting
 - Open cmd or terminal and type:
-- `sudo apt install nginx` to install nginx
-- `systemctl status nginx` checks if nginx is active and running
-- Now open a web browser and type in your ip address (provided by the VPS) you should see the nginx welcome message.
-- To host the website we have to navigate to the nginx folder or we can create a new directory
+- `sudo apt install apache2` to install apache
+- `systemctl status apache2` checks if apache is active and running
+- Now open a web browser and type in your ip address (provided by the VPS) you should see the apache welcome message.
+- To host the website we have to navigate to the apache folder or we can create a new directory
 - `cd /var/www/` inside this folder you will find html and inside here is where we will put our HTMLs.
   <hr>
 - New directory
   - `cd sudo mkdir /var/www/IP_ADDRESS` this creates a new directory. IP_ADDRESS is the one that the VPS provided you.
   - `sudo chmod 755 -R /var/www/IP_ADDRESS` to add permission
   - `sudo chown -R hostname:www-data /var/www/IP_ADDRESS` to change the ownership of the file. This is to make sure that the directory belongs to the current user. This will allows us later on to update the content of the directory using a script.
-  - Now let's create a configuration file to link nginx to the new directory
-### Nginx configuration file
+  - Now let's create a configuration file to link apache to the new directory
+### Apache2 configuration file
 -   run this command:
-    -   `sudo nano /etc/nginx/sites-available/IP_ADDRESS`
+    -   `sudo nano /etc/apache2/sites-available/UnixVpsServerTest.com.conf`
 -   this will open GNU nano editor
-    -   type:
+    -   type(change my inputs for your own inputs):
     -   ```
-        server {
-            listen 80;
-            listen [::]:80;
-
-            root /var/www/IP_ADDRESS;
-            index index.html;
-        }
+        <VirtualHost *:80>
+          ServerAdmin mdsaqliyanislam123@gmail.com
+          ServerName UnixVpsServerTest.com
+          ServerAlias www.UnixVpsServerTest.com
+          DocumentRoot /var/www/UnixVpsServerTest.com/public_html
+          ErrorLog ${APACHE_LOG_DIR}/error.log
+          CustomLog ${APACHE_LOG_DIR}/access.log combined
+         </VirtualHost>
         ```
 
 ### Unlink the default configuration file and link the new one
-- Run this command to unlink the default file
-  - `sudo unlink /etc/nginx/sites-enabled/default`
-- Run this command to link the new file
-  - `sudo ln -s /etc/nginx/sites-available/IP_ADDRESS /etc/nginx/sites-enabled/` this will create a symbolic link 
-- To check if nginx is still working, run this command
-  - `sudo nginx -t` it should show you that the syntax is okay and test is successful.
+- Run this command to unable the default file using a2ensite
+  - `sudo a2dissite 000-default.conf`
+- Run this command to enable the new file
+  - `sudo a2ensite UnixVpsServerTest.com.conf` this will enable the new site 
+- To check if apache is still working, run this command
+  - `sudo systemctl status apache2` it should show you that the syntax is okay and test is successful.
 - We now removed the default config file and successfully created a new one.
 
 ## Firewall configuration
