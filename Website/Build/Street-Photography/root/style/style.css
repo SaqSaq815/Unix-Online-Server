@@ -1,0 +1,590 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200&family=Indie+Flower&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200&family=Roboto:wght@100&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+h1 {
+    font-size: 2rem;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+
+}
+
+nav>ul {
+    display: flex;
+    flex-wrap: wrap;
+ 
+}
+
+nav>ul>li {
+    padding: auto;
+    margin: auto;
+    display: flex;
+    width: 110px;
+    border: 1px solid black;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+
+}
+
+nav>ul>li>a{
+    width: 110px;
+    text-align: center;
+}
+
+nav>ul>li:hover {
+    background-color: rgb(0, 0, 0);
+    color: white;
+}
+
+nav>ul>li {
+    list-style: none;
+}
+
+
+nav>ul>li>a:link, a:visited {
+    color: black;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    letter-spacing: 2px;
+
+}
+
+nav>ul>li>a:hover {
+    color: white;
+    font-style: bold;
+
+}
+
+nav>ul>li>a:active {
+    color: rgb(255, 255, 255);
+
+}
+
+#currentPage {
+    background-color: rgb(126, 118, 118);
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px black;
+    width: inherit;
+}
+
+nav {
+    margin: 20px 30px;
+    padding: 12px 12px;
+    border: 1px solid black;
+
+}
+
+.main-home, .main-topic, .main-form{
+    margin: 0 30px;
+}
+    .main-home section {
+        margin: 20px 0;
+    }
+
+main.main-gallery {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: stretch;
+    flex-wrap: wrap;
+
+
+}
+
+main>figure {
+    border: 1px solid black;
+    margin-bottom: 1.5rem;
+    border-radius: 15px;
+    flex-direction: row;
+    
+
+
+}
+
+main>figure>img {
+    padding: 25px 20px;
+    border-top-left-radius: 35px;
+    border-top-right-radius: 35px;
+
+
+}
+
+figcaption {
+    position: relative;
+    top: -10px;
+    text-align: center;
+    padding: 10px 10px;
+    border: 1px solid black;
+    color: white;
+    background-color: black;
+
+}
+
+/* List page styling  */
+.main-list {
+    display: table;
+    margin: auto;
+    padding: auto;
+}
+
+.main-list h2 {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.ordered-list {
+    margin-bottom: 5rem;
+}
+
+.ordered-list>ol {
+    list-style: upper-roman;
+    border: 1px solid black;
+    padding: 1.25rem 2.5rem;
+    list-style-position: outside;
+}
+
+ol>li {
+    border: 1px dashed black;
+    margin: 10px 0;
+
+
+}
+
+ol>li:hover {
+    background-color: black;
+    color: white;
+}
+
+.unordered-list>ul {
+    border: 1px dotted black;
+    padding: 20px 40px;
+    list-style-position: outside;
+    
+}
+
+.unordered-list>ul li {
+    border: 4px double black;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    
+
+}
+
+
+.unordered-list> ul li:hover {
+    background: grey url(../images/camera-bg.jpeg) no-repeat center;
+    color: white;
+
+}
+caption{
+    text-align: left;
+    padding: 0;
+
+   
+}
+caption::first-letter{
+    font-size: 2rem;
+}
+
+
+/* Table styling */
+main.table-page{
+
+  margin: 0 30px;
+}
+
+table {
+    margin: auto;
+    padding: auto;
+    border-collapse: collapse;
+    max-width: 50rem;
+    empty-cells: hide;
+    box-shadow: -0.1rem -0.1rem 0.3rem #fff,
+                0.1rem 0.1rem 0.3rem #868686;
+    min-height: 500px;
+  
+}
+
+thead{
+    background-color: rgb(63, 63, 63);
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: white;
+}
+
+tbody{
+    background-color: #F76C6C;
+    
+}
+
+tfoot{
+    background-color: #F8E9A1;
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 5px 30px;
+    cursor: default;
+
+}
+
+thead th:hover {
+    box-shadow: inset -0.1rem -0.1rem 0.3rem black,
+    inset 0.1rem 0.1rem 0.3rem #f5faff;
+    text-shadow: 0 0 2px white;
+}
+
+tbody th:hover , td:hover {
+    box-shadow: inset -0.1rem -0.1rem 0.3rem #a05050,
+                inset 0.1rem 0.1rem 0.3rem #eb8989;
+    text-shadow: 0 0 5px white;
+    background-color: rgb(244, 134, 134)
+}
+tfoot td:hover{
+    box-shadow: inset -0.1rem -0.1rem 0.3rem #a49b6d,
+    inset 0.1rem 0.1rem 0.3rem #faefb8;
+    background-color: rgb(247, 237, 188)
+ 
+}
+
+tbody > tr:nth-child(odd){
+    background-color: #c24f4f;
+}
+
+
+
+/* Footer */
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    min-height: 30vh;
+}
+
+footer>.footer-format {
+    font-size: .8rem;
+    color: white;
+    background-color: black;
+    border: 1px solid black;
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+/* ==============
+    TOPIC PAGE
+   ============== */
+
+.list-topic  ul li {
+   list-style-type: circle;
+   list-style-position: inside;
+}
+
+/* A) The font of each heading must be different*/
+.topic-header > h1 {
+    font-family: 'Abril Fatface', cursive;  
+}
+.topic-header  h2 {
+    font-family:'Cairo', sans-serif;
+}
+.topic-header  h3{
+    font-family: 'Indie Flower', cursive;
+}
+    /* B) text heading must be centered and italic C) Add a text Shadow */
+   .topic-header h1, .topic-header h2, .topic-header h3{
+        text-shadow: 5px 5px 10px grey;
+        text-align: center;
+        font-style: italic;
+        
+    }
+    /* D) Each p must use different font E) Increase the line height of each p */
+    .topic-header p {
+        font-family: 'Roboto', sans-serif;
+        line-height: 1.5;
+        
+    }
+
+/* F) Capitalize the first line of the first p */
+/* PS. Doest not work on safari */
+.topic-body > p:first-child:first-line {
+    text-transform: capitalize;
+  
+}   
+
+/* G) Capitalize the first letter of the 2nd and 3rd p and increase the font size of the first letter */
+.topic-body > p:nth-child(n+2)::first-letter{
+    font-size: 2rem;
+}
+
+/* h) upon selecting any text in your container, the bg-color must be changed to yellow */
+::selection {
+    color: black;
+    background: yellow;
+}
+::-moz-selection{
+    color: black;
+    background: yellow;
+}
+
+/* ==============
+    FORM PAGE
+     ============== */
+.alert{
+    background-color: rgb(27, 183, 245);
+    padding: 1rem 1rem;
+    color: white;
+    margin-bottom: 5rem;
+}
+
+fieldset {
+    border-style: none;
+   
+}
+
+.main-form{
+    border-style: none none solid none;
+    width: inherit;
+    
+}
+
+/* Student's info section */
+.std-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-verification{
+    position: relative;
+}
+
+.user-username, .address-province, .user-dob{
+    width: 50%;
+    float: left;
+}
+    .user-username input{
+       width: 100%;
+    }
+
+.user-pass{
+  float: right;
+  width: 40%;
+}
+
+    .user-pass input, .user-dob input{
+        width: 100%;
+
+    }
+
+.user-courses{
+    float: right;
+    width: 40%;
+    margin-top: 20px;
+}
+select{
+    height: 30px;
+}
+     
+/* radio btn campus section */
+.campus-radio-btn{
+    clear: both;
+    margin-bottom: 20px;
+}
+    .campus-radio-btn p, .user-schedule p{
+       font-weight: bold;
+       margin-bottom: 5px;
+    }
+    .campus-radio-btn input, .user-schedule input{
+        margin-right: 5px;
+    }
+    .campus-radio-btn label{
+        margin-right: 10rem;
+    }
+    .user-schedule label{
+        margin-right: 5rem;
+    }
+
+/* Contact section  */
+.user-schedule, .user-contact{
+    margin-bottom: 30px;
+}
+.contact,.address, hr {
+    margin-bottom: 20px;
+}
+
+.c-break{
+    width: 100%;
+}
+.user-contact {
+    display: flex;
+    width: 100%;
+   
+}
+    .user-contact div {
+        margin-right: 30px;
+    }
+    .email input{
+        width: 15rem;
+    }
+
+.user-phone input{
+    width: 14rem;
+}
+.fav-color {
+    width: 100%;
+}
+.fav-color input{
+    height: 20px;
+    width: 100%;
+    padding: 2px;
+}
+
+/* address section */
+.address-postal {
+ margin-bottom: 30px;
+  
+}
+
+.address-postal #postal{
+    width: 50%;
+}
+
+.address-province #province {
+    width: 95%;
+     
+}
+
+input#street, input#city{
+    width: 100%;
+}
+
+/* comment section */
+
+textarea{
+    margin: 10px 0 20px 0;
+    width: 100%;
+    padding: 10px;
+}
+/* btn section */
+.btn button, .btn input {
+    width: 80px;
+    height: 40px;
+    color: white;
+    border-style: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 5px 2px #999;
+}
+    .btn button:active, .btn .submit:active{
+        box-shadow: 0 5px #666;
+        transform: translateY(2px);
+    }
+    
+.btn button{
+    background-color: rgb(184, 16, 16);
+}
+    .btn button:hover {
+        background-color: rgb(190, 88, 88);
+    }
+.btn .submit {
+    background-color: rgb(27, 183, 245);
+}
+    .btn .submit:hover {
+        background-color: rgb(95, 201, 243);
+    }
+
+.btn{
+    margin-bottom: 4rem;
+}
+
+
+input#stdID, input#firstName, input#lastName{
+    width: 100%;
+}
+    input#lastName{
+        margin-bottom: 10px;
+    }
+input[type=text], input[type=password],
+input[type=email],input[type=tel]{
+    padding: 5px 0;
+    margin: 5px 0;
+}
+
+
+.form-footer{
+    margin-bottom: 15px;
+}
+
+.user-schedule div{
+      display: inline;
+   
+}
+/* Responsive layout */
+
+@media only screen and (max-width: 500px) {
+    .std-form{
+        display: table;
+        width: 100%;
+       
+    }
+    form {
+        width: inherit;
+    }
+
+   fieldset#contact-form .user-contact{
+     flex-direction: column;
+   }
+  .campus-radio-btn input, .campus-radio-btn label{
+      display: inline;
+      margin: 0;
+     padding-right: 1.5rem;
+  }
+  .user-schedule div{
+      display: block;
+   
+  }
+
+   .email{
+       display: block;
+   }
+  
+}
+
+@media only screen and (max-width: 775px) {
+    .table-page{
+        overflow-x: auto;
+    }
+}
+
+@media (min-width: 900px) {
+    main.main-gallery {
+        padding: 0 12.5rem 0 12.5rem;
+    }
+    
+}
+
+
+@media (min-width: 1525px) {
+    main.main-gallery {
+        /*padding: 0 25% 0 25%;*/
+
+    }
+
+    figure>img {
+        height: auto;
+        width: 450px;
+    }
+
+}
