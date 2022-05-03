@@ -13,8 +13,10 @@
   - [Firewall configuration](#firewall-configuration)
   - [Domain name](#domain-name)
   - [SSL configuration](#ssl-configuration)
-  - [Website (static website) & Script deployment](#website-static-website--script-deployment)
-  - [Bash script](#bash-script)
+  - [Website (static website) & Script deployment REMOTELY](#website-static-website--script-deployment-remotely)
+  - [Bash script (REMOTELY)](#bash-script-remotely)
+  - [SCRIPT for Automate deployment to the web server](#script-for-automate-deployment-to-the-web-server)
+  - [Other way to perform auto deployment](#other-way-to-perform-auto-deployment)
   - [Q&A](#qa)
     - [If ssh is not working?](#if-ssh-is-not-working)
     - [Cant connect to VPS?](#cant-connect-to-vps)
@@ -167,7 +169,7 @@
   - You have to add server_name in the /etc/nginx/sites-available/IP_ADDRESS file. `server_name domain_name www.domain_name
   - Follow the instruction carefully and don't miss any step.
 
-## Website (static website) & Script deployment
+## Website (static website) & Script deployment REMOTELY
 - For the purpose of this project we will deploy a simple static website.
 - Create a folder called build and have your index.html inside.
 - Create subfolder css and images for your style.css and images
@@ -176,7 +178,7 @@
 - This will automate your file transfer to the server
 - Every time you modify the file just run the script to update the file you have in the remote server.
 
-## Bash script
+## Bash script (REMOTELY)
  ```bash
   #!/bin/bash
   set -e
@@ -215,6 +217,25 @@
   fi
     echo "Finish executing script"
   ```
+
+## SCRIPT for Automate deployment to the web server
+- To create the script automation you have to ssh to your VPS.
+- Once login, get into our github and look for the green button that says code.
+- Click on it and it should give you a link(HTTPS) into our repo.
+- Then execute this commands
+```
+git --version // to check current version or to see if git is installed
+sudo apt install git // this command will install git on the system
+git clone -b main (the clone link from github) // this will create a clone repo in the VPS
+cd (repo-name) // change directory
+
+```
+**NORE:** During this installation the git version is 2.30.2
+## Other way to perform auto deployment
+- In this way we are going to configure the auto deployment using digitalocean and github.
+- First you have to ssh to your server
+- make sure to install and update git
+- 
 
 **IMPORTANT:** if you forgot your directory, check your nginx config file. HostName is the name of the user you created and the IP_ADDRESS is the IP that VPS provided. These settings depends on how you set up your nginx config file.
 
