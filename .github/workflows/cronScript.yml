@@ -33,5 +33,6 @@ jobs:
           echo sudo su -l www-data -s /bin/bash
           echo cd /var/www/165.227.41.176/Unix-Online-Server/
           echo git fetch --all
-          echo git checkout --force origin main
+          echo git checkout --force "origin/main"
+          echo exit
         
