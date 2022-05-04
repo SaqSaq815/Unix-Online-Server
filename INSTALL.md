@@ -247,7 +247,10 @@ cd (repo-name) // change directory
 - And now we can clone our repo using the HTTPS link or SSH key.
 - `git clone -b main {repo link} or git clone -b main {SSH KEY}`
 - Next step is to create out php script. [deploy.php](Website/Build/deploy.php)
-- Make sure to have it inside your deploy folder where your index.html is
+- Make sure to place on the parent folder for easy access.
+- Then go back the repo settings and look for webhooks on the left panel
+- Add webhooks and paste your (vps ip address/or your domain name) on the payload url box;
+  - It should be look like this `https//{YOURSITE}.com/deploy.php or https//{IP_ADDRESS}/deploy.php`;
 - 
 
 **IMPORTANT:** if you forgot your directory, check your nginx config file. HostName is the name of the user you created and the IP_ADDRESS is the IP that VPS provided. These settings depends on how you set up your nginx config file.
