@@ -30,8 +30,8 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
-          sudo su -l www-data -s /bin/bash
-          cd /var/www/165.227.41.176/Unix-Online-Server/
-          git fetch --all
-          git checkout --force origin main
+          echo sudo su -l www-data -s /bin/bash
+          echo cd /var/www/165.227.41.176/Unix-Online-Server/
+          echo git fetch --all
+          echo git checkout --force origin main
         
