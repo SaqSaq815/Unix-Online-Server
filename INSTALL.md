@@ -16,7 +16,7 @@
   - [Website (static website) & Script deployment REMOTELY](#website-static-website--script-deployment-remotely)
   - [Bash script (REMOTELY)](#bash-script-remotely)
   - [SCRIPT for Automate deployment to the web server](#script-for-automate-deployment-to-the-web-server)
-  - [Other way to perform auto deployment](#other-way-to-perform-auto-deployment)
+  - [Other way and the easiest way to perform auto deployment](#other-way-and-the-easiest-way-to-perform-auto-deployment)
   - [Q&A](#qa)
     - [If ssh is not working?](#if-ssh-is-not-working)
     - [Cant connect to VPS?](#cant-connect-to-vps)
@@ -230,11 +230,24 @@ git clone -b main (the clone link from github) // this will create a clone repo 
 cd (repo-name) // change directory
 
 ```
-**NORE:** During this installation the git version is 2.30.2
-## Other way to perform auto deployment
+**NOTE:** During this installation the git version is 2.30.2
+## Other way and the easiest way to perform auto deployment
 - In this way we are going to configure the auto deployment using digitalocean and github.
 - First you have to ssh to your server
 - make sure to install and update git
+- We have to generate a deploy key and add it to the GitHubRepo,
+- `sudo -Hu {hostname} ssh keygen -t rsa`
+- this will give your key and take note of the key location
+- then we have to copy the public key into the github repo.
+- `sudo cat {key location}`
+- Go to the settings and look for deploy key and there you can add new key.
+- We also need to modify our configuration path
+- `sudo nano /etc/nginx/sites-available/165.227.41.176`
+- Look for the location and add the file directory name. it should be like this (/etc/nginx/sites-available/165.227.41.176/Unix-Online-Server/Website/Deploy)
+- And now we can clone our repo using the HTTPS link or SSH key.
+- `git clone -b main {repo link} or git clone -b main {SSH KEY}`
+- Next step is to create out php script. [deploy.php](Website/Build/deploy.php)
+- Make sure to have it inside your deploy folder where your index.html is
 - 
 
 **IMPORTANT:** if you forgot your directory, check your nginx config file. HostName is the name of the user you created and the IP_ADDRESS is the IP that VPS provided. These settings depends on how you set up your nginx config file.
