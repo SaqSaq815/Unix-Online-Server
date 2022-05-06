@@ -16,6 +16,7 @@
   - [Team :two_men_holding_hands:](#team-two_men_holding_hands)
 - [Teacher :cop:](#teacher-cop)
 
+
 ## Description & Scenarios :newspaper:
 - In this project we are going to fully setup a remote GNU/Linux server, host our website and deploy it online.
 
@@ -187,6 +188,8 @@
 ## Found a bug :bug:
 - Please let us know if you found any bug, we will try our best to fix it right away.
 
+## Final Decision
+- Click this [link](Decisions.md) to see the final decisions for the project.
 ## Team :two_men_holding_hands:
 - Jeffrey Grospe
 - Md Saqliyan Islam
