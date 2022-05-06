@@ -4,6 +4,7 @@
      *
      * Used for automatically deploying websites via GitHub
      *
+     *  DON'T USE THIS SCRIPT, NOT FUNCTIONAL
      */
 
     // array of commands

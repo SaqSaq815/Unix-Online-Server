@@ -16,7 +16,6 @@
   - [Website (static website) & Script deployment REMOTELY](#website-static-website--script-deployment-remotely)
   - [Bash script (REMOTELY)](#bash-script-remotely)
   - [SCRIPT for Automate deployment to the web server](#script-for-automate-deployment-to-the-web-server)
-  - [Other way and the easiest way to perform auto deployment](#other-way-and-the-easiest-way-to-perform-auto-deployment)
   - [Q&A](#qa)
     - [If ssh is not working?](#if-ssh-is-not-working)
     - [Cant connect to VPS?](#cant-connect-to-vps)
@@ -28,6 +27,7 @@
     - [Does this project only support static website?](#does-this-project-only-support-static-website)
     - [Why script bash?](#why-script-bash)
     - [Connection timed out on port 22?](#connection-timed-out-on-port-22)
+  - [Exec format error when running service?](#exec-format-error-when-running-service)
 - [Back to the documentation :leftwards_arrow_with_hook:](#back-to-the-documentation-leftwards_arrow_with_hook)
 ## VPS installation
 - Create an account on digital ocean
@@ -52,12 +52,13 @@
       - `$ ssh-keygen -b 4096` running this command will create your rsa key. The `-b 4096` indicates the size. Then enter to confirm the default location.
       - Use `cat ~/.ssh/id_rsa.pub` to check your public key.
       - Copy its content to digital ocean ssh authentication.
+     
       - Use this key when you connect to the remote server.
     - Mac
       - To generate your ssh key on Mac follow this [link][ssh-mac]. It is very similar to linux.
     - Windows
       - To generate your ssh key on windows platform you have to use PuTTY. Check [this][PuTTY] for installation guide
-  
+- NOTE: you are going to need this key later for github. 
 ## Connecting to the remote server
 - Connect to the server using the provided ip address
   - On windows, 
@@ -155,13 +156,13 @@
   - 4. After successfully creating your domain, it will display you 3 DNS record. You have to copy these value and paste it on your Name.com name server. You will find this option in Manage name server.
   - 5. Edit the existing name server and paste the one that you copied on digitalocean. ex. `ns1.digitalocean.com, ns2.digitalocean.com, ns3.digitalocean.com`, click update and don't forget to save.
   - 5. Now go back to the Create new record option on digitalocean. Enter **@** as the hostname and direct it to your droplet. Now your domain name should point to your website.
-  - In order for the "**www**" to work, we need to create a new record. Enter **www** as your hostname and point it to your droplet. Now if you enter `www.yourdomainname.com` you should see your website.
+  - In order for the "**www**" to work, we need to create a new record. Enter **www** as your hostname and direct it to your droplet. Now if you enter `www.yourdomainname.com` you should see your website.
 
 ## SSL configuration
 - **IMPORTANT** you need to have a domain name for the SSL to work.
 - We are going to enabled HTTPS using LetsEncrypt to add more security into our website
 - There are two ways to do this
-  - First managed it directly on the digital ocean website.
+  - First managed it directly on the digital ocean website or on Name.com.
   - Second we create manually.
 - We are going to create our SSL manually. Follow the link below.
 - Check [this][SSL] for more detailed guide
@@ -170,6 +171,7 @@
   - Follow the instruction carefully and don't miss any step.
 
 ## Website (static website) & Script deployment REMOTELY
+- If you want to do the auto deployment follow [this](#script-for-automate-deployment-to-the-web-server) and ignore the Bash script (remotely)
 - For the purpose of this project we will deploy a simple static website.
 - Create a folder called build and have your index.html inside.
 - Create subfolder css and images for your style.css and images
@@ -219,41 +221,69 @@
   ```
 
 ## SCRIPT for Automate deployment to the web server
-- To create the script automation you have to ssh to your VPS.
-- Once login, get into our github and look for the green button that says code.
-- Click on it and it should give you a link(HTTPS) into our repo.
-- Then execute this commands
-```
-git --version // to check current version or to see if git is installed
-sudo apt install git // this command will install git on the system
-git clone -b main (the clone link from github) // this will create a clone repo in the VPS
-cd (repo-name) // change directory
+- First thing is to do is to set up your github repository 
+- Follow this [guide](https://docs.github.com/en/get-started/quickstart/create-a-repo)
+- After finishing your repository, go back to the vps.
+- This time we are going to copy the public keys we created earlier and paste on github
+- `cat ~/.ssh/id_rsa.pub`, copy this key and go to your github repository
+- Click settings > look for deploy keys on the left side > click add deploy key on the top right
+- Give it a proper name and paste your key then click Add key
+- Now go back to the VPS
+- Let's create the script `sudo nano /usr/bin/deploy.sh`. Add the following,
+- ```bash
+    #!/bin/bash
+    cd /var/www/IP_ADDRESS
+    git fetch --all
+    git checkout --force "origin/main"
+  ```
+- First line is to make sure we are in the right directory.
+- Second line gets all the data from the github repo without merging or rebasing.
+- Third line using the optional command force to make sure that any changes that happens will be applied to the local repository as well
+- Save the file and add permission, `sudo chmod 777 /usr/bin/deploy.sh` `sudo chmod +x /usr/bin/deploy.sh`
+- Then we create our services:
+  - First is the service to start our script.
+  - sudo nano `/etc/systemd/system/deployment.service`. Add the following.
+  - ```bash
+    [Unit]
+    Description=add your description
 
-```
-**NOTE:** During this installation the git version is 2.30.2
-## Other way and the easiest way to perform auto deployment
-- In this way we are going to configure the auto deployment using digitalocean and github.
-- First you have to ssh to your server
-- make sure to install and update git
-- We have to generate a deploy key and add it to the GitHubRepo,
-- `sudo -Hu {hostname} ssh keygen -t rsa`
-- this will give your key and take note of the key location
-- then we have to copy the public key into the github repo.
-- `sudo cat {key location}`
-- Go to the settings and look for deploy key and there you can add new key.
-- We also need to modify our configuration path
-- `sudo nano /etc/nginx/sites-available/165.227.41.176`
-- Look for the location and add the file directory name. it should be like this (/etc/nginx/sites-available/165.227.41.176/Unix-Online-Server/Website/Deploy)
-- And now we can clone our repo using the HTTPS link or SSH key.
-- `git clone -b main {repo link} or git clone -b main {SSH KEY}`
-- Next step is to create out php script. [deploy.php](Website/Build/deploy.php)
-- Make sure to place on the parent folder (root folder) for easy access.
-- Then go back the repo settings and look for webhooks on the left panel
-- Add webhooks and paste your (vps ip address/or your domain name) on the payload url box;
-  - It should be look like this `https//{YOURSITE}.com/deploy.php or https//{IP_ADDRESS}/deploy.php`;
-  - Make sure you paste your url links properly or else it wont work
-- Then add or modify anything on the repo and push it.
-- If you did it right it will automatically push the changes to the server.
+    [Service]
+    ExecStart=/usr/bin/deploy.sh
+
+    [Install]
+    WantedBy=multi-user.target
+    ```
+- Save the file and add permission again.
+- And for the last trick, we are going to create another service.
+- A timer service that runs the script every 30 seconds
+- sudo nano `/etc/systemd/system/deployment.timer` **IMPORTANT** make sure you named it the same way as your other service
+- ```bash
+  [Unit]
+  Description=add your description
+
+  [Timer]
+  OnUnitActiveSec=30sec
+  OnBootSec=10
+
+  [Install]
+  WantedBy=timers.target
+  ```
+- Save the file and add permission
+- Last time is to make the service functional
+- lets start with the deployment.services
+- `sudo systemctl daemon-reload`
+- `sudo systemctl enable deployment.service`
+- `sudo systemctl start deployment.service`
+- `sudo systemctl status deployment.service` to see if the service is active and running if not, 
+- make sure you did not misspelled anything and you added permissions
+- Next is the deployment.timer
+- `sudo systemctl daemon-reload`
+- `sudo systemctl enable deployment.timer`
+- `sudo systemctl start deployment.timer`
+- `sudo systemctl status deployment.timer`
+- Now all changes you make on github should applied automatically on your vps
+- The script runs every 30secs to check if there any changes made.
+
 
 **IMPORTANT:** if you forgot your directory, check your nginx config file. HostName is the name of the user you created and the IP_ADDRESS is the IP that VPS provided. These settings depends on how you set up your nginx config file.
 
@@ -289,7 +319,14 @@ cd (repo-name) // change directory
   - For the sake of simplicity and to demonstrate our knowledge of linux commands, we used bash. You can make python script but keep in mind, that will be another environment to work it.
 ### Connection timed out on port 22?
   - You need to make sure that you allowed ssh connection on this port. You can fix this my logging in to your digitalocean account and go to the console option and type `sudo ufw allow 22`.
-
+## Exec format error when running service?
+  - Make sure you have the right link or location to the script file.
+  - Make sure you have the right keywords, be careful of spelling mistakes.
+  - Make sure you add permissions.
+<!-- ## How to make a public key and add it to github?
+  - `sudo ssh mkdir /var/www/.ssh`
+  - `sudo -Hu {HOSTNAME} ssh-keygen -t rsa /var/www/.ssh`
+  - `sudu cat {KEY LOCATION}` -->
 # Back to the documentation [:leftwards_arrow_with_hook:](README.md)
 
 
