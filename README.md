@@ -24,6 +24,7 @@
 - The goal of this project is to used what we learned in Unix course and apply it in real life scenarios. This project will demonstrate our knowledge in Linux environnement, used of VPS and Web server.
 - Additionally, this will demonstrate our skills to work in a team.
 
+
 ## Time table :clock130:
 - Progress
   | week 1 | week 2 | week 3 |
@@ -187,6 +188,9 @@
 - Visit our site at www.le3pokpok.codes
 ## Found a bug :bug:
 - Please let us know if you found any bug, we will try our best to fix it right away.
+
+- DigitalOcean
+  [![DigitalOcean Referral Badge](https://web-platforms.sfo2.cdn.digitaloceanspaces.com/WWW/Badge%201.svg)](https://www.digitalocean.com/?refcode=b048fb627884&utm_campaign=Referral_Invite&utm_medium=Referral_Program&utm_source=badge)
 
 ## Final Decision
 - Click this [link](Decisions.md) to see the final decisions for the project.

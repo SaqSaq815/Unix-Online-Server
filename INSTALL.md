@@ -29,6 +29,7 @@
     - [Connection timed out on port 22?](#connection-timed-out-on-port-22)
   - [Exec format error when running service?](#exec-format-error-when-running-service)
 - [Back to the documentation :leftwards_arrow_with_hook:](#back-to-the-documentation-leftwards_arrow_with_hook)
+- [PoweredBy DigitalOcean](#poweredby-digitalocean)
 ## VPS installation
 - Create an account on digital ocean
 - Create a new droplet
@@ -329,7 +330,9 @@
   - `sudu cat {KEY LOCATION}` -->
 # Back to the documentation [:leftwards_arrow_with_hook:](README.md)
 
-
+# PoweredBy DigitalOcean
+- DigitalOcean
+  [![DigitalOcean Referral Badge](https://web-platforms.sfo2.cdn.digitaloceanspaces.com/WWW/Badge%201.svg)](https://www.digitalocean.com/?refcode=b048fb627884&utm_campaign=Referral_Invite&utm_medium=Referral_Program&utm_source=badge)
 
 <!-- LINKS -->
 [PuTTY]:https://docs.oracle.com/en/cloud/paas/event-hub-cloud/admin-guide/generate-ssh-key-pair-using-puttygen.html

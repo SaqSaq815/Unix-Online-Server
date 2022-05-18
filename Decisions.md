@@ -26,6 +26,7 @@
 	- For the purpose of this project, and little information we had on our website to be compromised
 	we decided to go with one time password. For the future we will be using a SSH Key because it 
 	provides more security to our web server.
+  [![DigitalOcean Referral Badge](https://web-platforms.sfo2.cdn.digitaloceanspaces.com/WWW/Badge%201.svg)](https://www.digitalocean.com/?refcode=b048fb627884&utm_campaign=Referral_Invite&utm_medium=Referral_Program&utm_source=badge)
 
 ## Firewall Configuration
 	- Digital Ocean comes with its own UI Firewall features, but for this project we decided
