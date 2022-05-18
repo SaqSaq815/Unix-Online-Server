@@ -189,8 +189,8 @@
 ## Found a bug :bug:
 - Please let us know if you found any bug, we will try our best to fix it right away.
 
-- DigitalOcean
-  [![DigitalOcean Referral Badge](https://web-platforms.sfo2.cdn.digitaloceanspaces.com/WWW/Badge%201.svg)](https://www.digitalocean.com/?refcode=b048fb627884&utm_campaign=Referral_Invite&utm_medium=Referral_Program&utm_source=badge)
+# PoweredBy
+[![DigitalOcean Referral Badge](https://web-platforms.sfo2.cdn.digitaloceanspaces.com/WWW/Badge%201.svg)](https://www.digitalocean.com/?refcode=b048fb627884&utm_campaign=Referral_Invite&utm_medium=Referral_Program&utm_source=badge)
 
 ## Final Decision
 - Click this [link](Decisions.md) to see the final decisions for the project.
