@@ -1,5 +1,5 @@
 # Unix-Online-Server :computer:
- Academic School project on Unix Course
+ Academic School project for Unix Course
 
  - [Unix-Online-Server :computer:](#unix-online-server-computer)
   - [Description & Scenarios :newspaper:](#description--scenarios-newspaper)
@@ -185,7 +185,7 @@
 - Click the magnifying glass for the script [:mag:](/INSTALL.md#bash-script) 
 
 ## Live Website
-- Visit our site at www.le3pokpok.codes
+- Visit our site at www.le3pokpok.codes *No Longer Available*
 ## Found a bug :bug:
 - Please let us know if you found any bug, we will try our best to fix it right away.
 
